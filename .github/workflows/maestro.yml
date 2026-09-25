@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Maestro CLI
         run: |
@@ -22,4 +22,4 @@ jobs:
         env:
           MAESTRO_API_KEY: ${{ secrets.MAESTRO_API_KEY }}
         run: |
-          maestro cloud --flows . --name "First Maestro Project" --format HTML --output maestro-cloud-report.html
+          maestro cloud --api-key "$MAESTRO_API_KEY" --flows . --name "First Maestro Project" --format HTML --output maestro-cloud-report.html
