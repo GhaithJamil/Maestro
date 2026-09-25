@@ -1,0 +1,16 @@
+url: https://www.saucedemo.com/
+tags: [regression, cart, positive]
+---
+- runFlow: ../auth/valid_login.yaml
+- tapOn: "Sauce Labs Backpack"
+- tapOn: "Add to cart"
+- tapOn: "Back to products"
+- tapOn: "Sauce Labs Bike Light"
+- tapOn: "Add to cart"
+- assertVisible: "2"
+- tapOn:
+    css: "[data-test='shopping-cart-link']"
+- tapOn: "Remove"
+- assertNotVisible: "Sauce Labs Backpack"
+- tapOn: "Remove"
+- assertNotVisible: "Sauce Labs Bike Light"

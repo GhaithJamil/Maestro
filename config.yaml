@@ -1,0 +1,4 @@
+appId: https://www.saucedemo.com/
+flows:
+  - flows/auth/*.yaml
+  - flows/cart/*.yaml
